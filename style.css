@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.qube {
+    margin: 210px auto;
+    width: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px -100px;
+    transform: rotateX(5deg) rotateY(20deg);
+    animation: anim 8s alternate linear infinite;
+}
+.qube div {
+    height: 200px;
+    width: 200px;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: visible;
+    box-shadow: 0 0 5px grey;
+}
+.side1 {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.side2 {
+    background-color: rgba(255, 166, 0, 0.5);
+    left: -200px;
+    top: 0;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+}
+.side3 {
+    background-color: rgba(255, 255, 0, 0.5);
+    left: 200px;
+    top: 0;
+    transform: rotateY(90deg);
+    transform-origin: left;
+}
+.side4 {
+    background-color: rgba(0, 128, 0, 0.5);
+    left: 0;
+    top: -200px;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+.side5 {
+    background-color: rgba(135, 207, 235, 0.5);
+    left: 0;
+    top: 200px;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+.side6 {
+    background-color: rgba(0, 0, 255, 0.5);
+    transform: translateZ(-200px) rotateY(180deg);
+}
+@keyframes anim {
+    from {
+        transform: rotateX(0deg) rotateY(0deg) scale(1);
+    }
+    to {
+        transform:rotateX(720deg) rotateY(360deg);
+    }
+}
